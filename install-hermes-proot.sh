@@ -36,36 +36,13 @@ echo -e "${BOLD}╚════════════════════�
 echo ""
 
 # ─── STEP 1: Termux prerequisites ───────────────────────────────────────────
-info "Updating and upgrading Termux packages..."
-
-# If update fails, print a warning instead of letting 'set -e' kill the script silently
-if ! pkg update -y > /dev/null 2>&1; then
-    warn "Package update failed or was partial. You may need to run 'termux-change-repo'."
-fi
-
-if ! pkg upgrade -y > /dev/null 2>&1; then
-    warn "Package upgrade failed or was partial."
-fi
+info "Updating Termux packages..."
+pkg update -y > /dev/null 2>&1
 ok "Termux packages updated"
 
 info "Installing Termux dependencies..."
-# We remove the silent redirect here so if it fails, the user actually sees why!
-if ! pkg install -y proot-distro git curl; then
-    err "Failed to install core dependencies. Please check your internet or run 'termux-change-repo'."
-fi
-
-# Auto-fix for common Termux curl/OpenSSL linking errors
-if ! command -v curl >/dev/null 2>&1 || ! curl --version >/dev/null 2>&1; then
-    warn "Detected broken curl installation. Attempting auto-fix..."
-    pkg reinstall -y curl openssl libngtcp2 > /dev/null 2>&1
-    
-    if ! curl --version >/dev/null 2>&1; then
-        err "Failed to fix curl. Please restart Termux and manually run: pkg upgrade -y"
-    fi
-    ok "Successfully repaired curl dependencies"
-fi
+pkg install -y proot-distro git curl > /dev/null 2>&1
 ok "Termux dependencies installed"
-
 
 
 # ─── STEP 2: proot-distro Ubuntu ────────────────────────────────────────────
