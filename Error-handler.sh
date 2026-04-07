@@ -212,20 +212,22 @@ else
     echo ""
 fi
 
-# ─── STEP 4e: Verify installation ──────────────────────────────────────────
+# ─── STEP 4e: Verify installation & Set up Alias ──────────────────────────
+info "Setting up local Hermes command..."
+
+# Automatically add the safe alias to Ubuntu's bashrc
+echo 'alias hermes="~/.hermes/hermes-agent/venv/bin/hermes"' >> "$HOME/.bashrc"
+
 info "Verifying installation..."
 
-# Source bashrc to get hermes on PATH
+# Source bashrc to get the new alias
 if [ -f "$HOME/.bashrc" ]; then
     source "$HOME/.bashrc" 2>/dev/null || true
 fi
 
 # Check common locations
 INSTALL_OK=false
-if command -v hermes &>/dev/null; then
-    INSTALL_OK=true
-    ok "hermes binary found in PATH"
-elif [ -f "$HOME/.hermes/hermes-agent/venv/bin/python" ]; then
+if [ -f "$HOME/.hermes/hermes-agent/venv/bin/python" ]; then
     INSTALL_OK=true
     ok "Hermes venv found"
 elif [ -f "$HOME/.hermes/hermes-agent/venv/bin/hermes" ]; then
