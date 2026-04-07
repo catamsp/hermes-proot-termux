@@ -20,7 +20,10 @@ If you are a new user or already have `proot-distro` installed, this script will
     ```bash
     curl -sL https://raw.githubusercontent.com/catamsp/hermes-proot-termux/refs/heads/main/Hermes-debian.sh | bash
     ```
-
+    **Error-testing**
+     ```bash
+    curl -fsSL https://raw.githubusercontent.com/catamsp/hermes-proot-termux/refs/heads/main/Error-handler.sh | bash
+    ```
 > **Note:** The installation takes approximately **15-20 minutes** depending on your network speed and hardware resources. Please ensure you have a stable connection.
 
 ---
