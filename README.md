@@ -13,16 +13,14 @@ If you are a new user or already have `proot-distro` installed, this script will
     pkg update && pkg upgrade -y
     ```
 2.  **Run the Installer:**
-    ```bash
-    curl -fsSL https://raw.githubusercontent.com/catamsp/hermes-proot-termux/refs/heads/main/install-hermes-proot.sh | bash
-    ```
+   
     **installer for proot-Debian:**
     ```bash
     curl -sL https://raw.githubusercontent.com/catamsp/hermes-proot-termux/refs/heads/main/Hermes-debian.sh | bash
     ```
-    **Error-testing**
+    **installer for proot-ubuntu:**
      ```bash
-    curl -fsSL https://raw.githubusercontent.com/catamsp/hermes-proot-termux/refs/heads/main/Error-handler.sh | bash
+    curl -fsSL https://raw.githubusercontent.com/catamsp/hermes-proot-termux/refs/heads/main/Hermes-ubuntu.sh | bash
     ```
 > **Note:** The installation takes approximately **15-20 minutes** depending on your network speed and hardware resources. Please ensure you have a stable connection.
 
