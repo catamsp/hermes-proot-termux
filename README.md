@@ -1,4 +1,8 @@
-# 🤖 Hermes Agent for Termux (proot-distro)
+# Hermes officially released for termux [please check](https://hermes-agent.nousresearch.com/docs/getting-started/termux)
+
+
+
+#🤖 Hermes Agent for Termux (proot-distro)
 
 Run [Hermes Agent](https://github.com/NousResearch/hermes-agent) — a powerful AI agent with shell access, file editing, web browsing, and 40+ tools — directly on your Android device using Termux and proot-distro Ubuntu.
 
